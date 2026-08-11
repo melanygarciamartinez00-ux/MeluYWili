@@ -1,33 +1,20 @@
 ```html
 <!DOCTYPE html>
-<html l
-ang="es">
-
+<html lang="es">
 <head>
-
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>💗 Melu & Wili 💗</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- =================================
-         FONDO GALAXIA
-    ================================== -->
-
     <div class="galaxia">
 
+        <!-- ESTRELLAS -->
         <div class="estrella estrella1">✦</div>
         <div class="estrella estrella2">✧</div>
         <div class="estrella estrella3">✦</div>
@@ -37,219 +24,168 @@ ang="es">
         <div class="estrella estrella7">✦</div>
         <div class="estrella estrella8">✧</div>
 
-
+        <!-- CORAZONES -->
         <div class="corazon corazon1">♥</div>
         <div class="corazon corazon2">♥</div>
         <div class="corazon corazon3">♡</div>
         <div class="corazon corazon4">♥</div>
         <div class="corazon corazon5">♡</div>
 
-
-        <!-- =================================
-             PORTADA
-        ================================== -->
-
+        <!-- PORTADA -->
         <section class="portada">
 
             <p class="mini">
                 ✨ UNA HISTORIA ESPECIAL ✨
             </p>
 
-
             <h1>
-
-                <span class="melu">
-                    Melu
-                </span>
-
-                <span class="y">
-                    &
-                </span>
-
-                <span class="wili">
-                    Wili
-                </span>
-
+                <span class="melu">Melu</span>
+                <span class="y">&</span>
+                <span class="wili">Wili</span>
             </h1>
-
 
             <div class="linea"></div>
 
-
             <p class="subtitulo">
-
                 Nuestro pequeño universo
                 lleno de recuerdos 💗
-
             </p>
 
-
-            <button
-                class="boton"
-                onclick="irGaleria()">
-
+            <button class="boton" onclick="irGaleria()">
                 💗 Ver nuestros recuerdos 💗
-
             </button>
 
         </section>
 
+        <!-- GALERÍA -->
+        <section id="galeria" class="seccion">
 
+            <p class="etiqueta">
+                ✦ NUESTROS RECUERDOS ✦
+            </p>
 
-        <!-- =================================
-             GALERÍA
-        ================================== -->
+            <h2>
+                💗 Melu & Wili 💗
+            </h2>
 
-        function irGaleria() {
+            <p class="descripcion">
+                Toca una fotografía para verla más grande ✨
+            </p>
 
-    const musica = document.getElementById("musica");
+            <div class="galeria">
 
-    musica.play()
-        .then(() => {
-            console.log("🎵 Música reproduciéndose");
-        })
-        .catch((error) => {
-            console.log("No se pudo iniciar la música:", error);
-        });
-
-    document.getElementById("galeria").scrollIntoView({
-        behavior: "smooth"
-    });
-}               <!-- FOTO 1 -->
-
-                <div
-                    class="foto"
-                    onclick="abrirFoto(0)">
-
+                <!-- FOTO 1 -->
+                <div class="foto" onclick="abrirFoto(0)">
                     <img
                         src="./fotos/foto1.webp"
                         alt="Melu y Wili foto 1">
-
                 </div>
 
-
-
                 <!-- FOTO 2 -->
-
-                <div
-                    class="foto"
-                    onclick="abrirFoto(1)">
-
+                <div class="foto" onclick="abrirFoto(1)">
                     <img
                         src="./fotos/foto2.webp"
                         alt="Melu y Wili foto 2">
-
                 </div>
 
-
-
                 <!-- FOTO 3 -->
-
-                <div
-                    class="foto"
-                    onclick="abrirFoto(2)">
-
+                <div class="foto" onclick="abrirFoto(2)">
                     <img
                         src="./fotos/foto3.webp"
                         alt="Melu y Wili foto 3">
-
                 </div>
 
-
-
                 <!-- FOTO 4 -->
-
-                <div
-                    class="foto"
-                    onclick="abrirFoto(3)">
-
+                <div class="foto" onclick="abrirFoto(3)">
                     <img
                         src="./fotos/foto4.webp"
                         alt="Melu y Wili foto 4">
-
                 </div>
-
 
             </div>
 
         </section>
 
-
-
-        <!-- =================================
-             MENSAJE
-        ================================== -->
-
+        <!-- MENSAJE -->
         <section class="mensaje">
 
             <div class="tarjeta">
 
-                <div class="brillo">
-                    ✦
-                </div>
-
+                <div class="brillo">✦</div>
 
                 <h2>
                     Melu 💗 Wili
                 </h2>
 
-
                 <p>
-
                     Cada fotografía guarda
                     un momento especial.
-
                     <br>
-
                     Y cada momento se convierte
                     en un recuerdo. ✨
-
                 </p>
 
-
                 <div class="firma">
-
                     Melu
                     <span>♡</span>
                     Wili
-
                 </div>
 
             </div>
 
         </section>
 
+        <!-- VISOR DE FOTOS -->
+        <div id="visor" class="visor">
 
+            <button
+                class="cerrar"
+                onclick="cerrarFoto()">
+                ×
+            </button>
 
-        <!-- =================================
-             REPRODUCTOR
-        ================================== -->
-```javascript
-const musica = document.getElementById("musica");
-const botonMusica = document.getElementById("botonMusica");
+            <button
+                class="flecha izquierda"
+                onclick="fotoAnterior()">
+                ‹
+            </button>
 
-botonMusica.onclick = function () {
+            <img
+                id="fotoGrande"
+                src=""
+                alt="Foto grande">
 
-    if (musica.paused) {
+            <button
+                class="flecha derecha"
+                onclick="fotoSiguiente()">
+                ›
+            </button>
 
-        musica.play()
-            .then(() => {
-                botonMusica.textContent = "❚❚";
-            })
-            .catch((error) => {
-                console.error(error);
-                alert("No se pudo reproducir la música.");
-            });
+            <div id="contador">
+                1 / 4
+            </div>
 
-    } else {
+        </div>
 
-        musica.pause();
-        botonMusica.textContent = "▶";
+        <!-- PIE DE PÁGINA -->
+        <footer>
 
-    }
+            <div>♥</div>
 
-};
+            <p>
+                Melu & Wili
+            </p>
 
-musica.onended = function () {
-    botonMusica.textContent = "▶";
-};
+            <span>
+                Hecho con cariño ✨
+            </span>
+
+        </footer>
+
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
+```

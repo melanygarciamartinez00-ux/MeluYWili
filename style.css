@@ -1,156 +1,57 @@
 ```css
-/* =========================================
-   MELU & WILI
-   GALAXIA
-========================================= */
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     min-height: 100vh;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+    font-family: Georgia, "Times New Roman", serif;
     background: #05000d;
-
     color: white;
-
 }
 
-
-/* =========================================
-   GALAXIA
-========================================= */
-
 .galaxia {
-
     min-height: 100vh;
-
     position: relative;
-
     overflow: hidden;
 
     background:
-
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(190, 50, 180, .45),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(90, 50, 220, .45),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 50% 80%,
-            rgba(240, 50, 150, .25),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            #05000d,
-            #15002b,
-            #2b0647,
-            #090018
-        );
-
+        radial-gradient(circle at 20% 20%, rgba(190, 50, 180, .45), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(90, 50, 220, .45), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(240, 50, 150, .25), transparent 35%),
+        linear-gradient(135deg, #05000d, #15002b, #2b0647, #090018);
 }
 
-
-/* =========================================
-   ESTRELLAS
-========================================= */
+/* ESTRELLAS */
 
 .estrella {
-
     position: absolute;
-
     color: white;
-
     font-size: 28px;
-
     text-shadow:
-
         0 0 5px white,
         0 0 15px #ff8bd7,
         0 0 30px #b77cff;
-
-    animation:
-        parpadear 2s infinite alternate;
-
+    animation: parpadear 2s infinite alternate;
     z-index: 1;
-
 }
 
-
-.estrella1 {
-    top: 10%;
-    left: 10%;
-}
-
-.estrella2 {
-    top: 25%;
-    left: 80%;
-    animation-delay: .5s;
-}
-
-.estrella3 {
-    top: 50%;
-    left: 15%;
-    animation-delay: 1s;
-}
-
-.estrella4 {
-    top: 70%;
-    left: 85%;
-    animation-delay: 1.5s;
-}
-
-.estrella5 {
-    top: 40%;
-    left: 50%;
-    animation-delay: .7s;
-}
-
-.estrella6 {
-    top: 80%;
-    left: 35%;
-    animation-delay: 1.2s;
-}
-
-.estrella7 {
-    top: 15%;
-    left: 55%;
-    animation-delay: .3s;
-}
-
-.estrella8 {
-    top: 60%;
-    left: 70%;
-    animation-delay: 1.7s;
-}
-
+.estrella1 { top: 10%; left: 10%; }
+.estrella2 { top: 25%; left: 80%; animation-delay: .5s; }
+.estrella3 { top: 50%; left: 15%; animation-delay: 1s; }
+.estrella4 { top: 70%; left: 85%; animation-delay: 1.5s; }
+.estrella5 { top: 40%; left: 50%; animation-delay: .7s; }
+.estrella6 { top: 80%; left: 35%; animation-delay: 1.2s; }
+.estrella7 { top: 15%; left: 55%; animation-delay: .3s; }
+.estrella8 { top: 60%; left: 70%; animation-delay: 1.7s; }
 
 @keyframes parpadear {
-
     from {
         opacity: .25;
         transform: scale(.7);
@@ -160,187 +61,91 @@ body {
         opacity: 1;
         transform: scale(1.2);
     }
-
 }
 
-
-/* =========================================
-   CORAZONES
-========================================= */
+/* CORAZONES */
 
 .corazon {
-
     position: absolute;
-
     color: #ff6fb5;
-
     font-size: 45px;
-
     text-shadow:
-
         0 0 10px #ff258e,
         0 0 25px #ff5db0;
-
-    animation:
-        flotar 5s ease-in-out infinite;
-
+    animation: flotar 5s ease-in-out infinite;
     z-index: 1;
-
 }
 
-
-.corazon1 {
-    left: 8%;
-    top: 15%;
-}
-
-.corazon2 {
-    right: 8%;
-    top: 20%;
-    animation-delay: 1s;
-}
-
-.corazon3 {
-    left: 15%;
-    bottom: 20%;
-    animation-delay: 2s;
-}
-
-.corazon4 {
-    right: 15%;
-    bottom: 15%;
-    animation-delay: 3s;
-}
-
-.corazon5 {
-    left: 50%;
-    top: 8%;
-    animation-delay: 1.5s;
-}
-
+.corazon1 { left: 8%; top: 15%; }
+.corazon2 { right: 8%; top: 20%; animation-delay: 1s; }
+.corazon3 { left: 15%; bottom: 20%; animation-delay: 2s; }
+.corazon4 { right: 15%; bottom: 15%; animation-delay: 3s; }
+.corazon5 { left: 50%; top: 8%; animation-delay: 1.5s; }
 
 @keyframes flotar {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(-5deg);
-
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
     }
 
     50% {
-
-        transform:
-            translateY(-30px)
-            rotate(8deg);
-
+        transform: translateY(-30px) rotate(8deg);
     }
-
 }
 
-
-/* =========================================
-   PORTADA
-========================================= */
+/* PORTADA */
 
 .portada {
-
     min-height: 100vh;
-
     position: relative;
-
     z-index: 5;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
-
     padding: 30px;
-
 }
-
 
 .mini {
-
     color: #ffd0e9;
-
     font-size: 13px;
-
     letter-spacing: 5px;
-
     margin-bottom: 20px;
-
 }
-
 
 .portada h1 {
-
-    font-size:
-        clamp(
-            65px,
-            14vw,
-            150px
-        );
-
+    font-size: clamp(65px, 14vw, 150px);
     font-weight: normal;
-
     margin: 10px;
-
 }
 
-
 .melu {
-
     color: #ff8ec9;
-
     text-shadow:
-
         0 0 10px #ff2798,
         0 0 30px #ff62b0,
         0 0 60px #d52291;
-
 }
-
 
 .y {
-
     color: #ffd76e;
-
     font-style: italic;
-
-    text-shadow:
-        0 0 20px #ffc43d;
-
+    text-shadow: 0 0 20px #ffc43d;
 }
 
-
 .wili {
-
     color: #ae91ff;
-
     text-shadow:
-
         0 0 10px #7a46ff,
         0 0 30px #996fff,
         0 0 60px #6334d6;
-
 }
 
-
 .linea {
-
     width: 180px;
-
     height: 2px;
-
     margin: 15px auto;
 
     background:
@@ -353,244 +158,139 @@ body {
             transparent
         );
 
-    box-shadow:
-        0 0 15px #ff6db7;
-
+    box-shadow: 0 0 15px #ff6db7;
 }
-
 
 .subtitulo {
-
     max-width: 600px;
-
     margin: 25px auto;
-
     color: #f5dff0;
-
     font-size: 19px;
-
     line-height: 1.7;
-
 }
 
-
 .boton {
-
-    padding:
-        16px 30px;
-
+    padding: 16px 30px;
     border: none;
-
     border-radius: 50px;
-
     cursor: pointer;
 
     color: white;
-
     font-size: 16px;
-
     font-weight: bold;
 
     background:
-
         linear-gradient(
             135deg,
             #c23d82,
             #7547c7
         );
 
-    box-shadow:
-        0 0 25px #db4ca1;
-
+    box-shadow: 0 0 25px #db4ca1;
     transition: .3s;
-
 }
-
 
 .boton:hover {
-
     transform: scale(1.07);
-
-    box-shadow:
-        0 0 40px #ff6db7;
-
+    box-shadow: 0 0 40px #ff6db7;
 }
 
-
-/* =========================================
-   GALERÍA
-========================================= */
+/* GALERÍA */
 
 .seccion {
-
     position: relative;
-
     z-index: 5;
-
-    padding:
-        100px 20px;
-
+    padding: 100px 20px;
     text-align: center;
-
 }
-
 
 .etiqueta {
-
     color: #ff9bcf;
-
     letter-spacing: 4px;
-
     font-size: 12px;
-
 }
 
-
 .seccion h2 {
-
     margin: 20px 0;
 
-    font-size:
-        clamp(
-            35px,
-            7vw,
-            65px
-        );
+    font-size: clamp(35px, 7vw, 65px);
 
     color: #ffb0d9;
 
-    text-shadow:
-        0 0 20px #d83d99;
-
+    text-shadow: 0 0 20px #d83d99;
 }
-
 
 .descripcion {
-
     color: #dfc9e5;
-
     font-size: 17px;
-
 }
-
 
 .galeria {
-
     max-width: 1000px;
-
-    margin:
-        50px auto 0;
+    margin: 50px auto 0;
 
     display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-
 }
 
-
-/* =========================================
-   FOTOS
-========================================= */
+/* FOTOS */
 
 .foto {
-
     position: relative;
-
     overflow: hidden;
 
     aspect-ratio: 4 / 5;
 
     border-radius: 25px;
-
     cursor: pointer;
 
     background: #160623;
 
     border:
         2px solid
-        rgba(
-            255,
-            120,
-            190,
-            .45
-        );
+        rgba(255, 120, 190, .45);
 
     box-shadow:
         0 0 25px
-        rgba(
-            225,
-            60,
-            170,
-            .3
-        );
+        rgba(225, 60, 170, .3);
 
     transition:
         transform .4s,
         box-shadow .4s;
-
 }
-
 
 .foto:hover {
-
-    transform:
-        translateY(-8px)
-        scale(1.02);
-
-    box-shadow:
-        0 0 40px #e348a2;
-
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 40px #e348a2;
 }
 
-
 .foto img {
-
     width: 100%;
-
     height: 100%;
-
     display: block;
 
     object-fit: cover;
 
-    transition:
-        transform .5s;
-
+    transition: transform .5s;
 }
-
 
 .foto:hover img {
-
     transform: scale(1.08);
-
 }
 
-
-/* =========================================
-   MENSAJE
-========================================= */
+/* MENSAJE */
 
 .mensaje {
-
     position: relative;
-
     z-index: 5;
 
-    padding:
-        90px 20px;
-
+    padding: 90px 20px;
     text-align: center;
-
 }
 
-
 .tarjeta {
-
     max-width: 700px;
-
     margin: auto;
 
     padding: 60px 30px;
@@ -598,510 +298,210 @@ body {
     border-radius: 30px;
 
     background:
-        rgba(
-            50,
-            10,
-            70,
-            .75
-        );
+        rgba(50, 10, 70, .75);
 
     border:
         1px solid
-        rgba(
-            255,
-            120,
-            190,
-            .4
-        );
+        rgba(255, 120, 190, .4);
 
     box-shadow:
         0 0 40px
-        rgba(
-            220,
-            60,
-            170,
-            .3
-        );
-
+        rgba(220, 60, 170, .3);
 }
-
 
 .brillo {
-
     font-size: 50px;
-
     color: #ffd76b;
-
-    text-shadow:
-        0 0 20px #ffc13e;
-
+    text-shadow: 0 0 20px #ffc13e;
 }
 
-
 .tarjeta h2 {
-
     margin: 15px;
-
     font-size: 45px;
 
     color: #ff9dcc;
 
     text-shadow:
         0 0 15px #ff3e9e;
-
 }
-
 
 .tarjeta p {
-
     color: #ead9ed;
-
     font-size: 18px;
-
     line-height: 1.8;
-
 }
-
 
 .firma {
-
     margin-top: 25px;
-
     color: #ff9dcc;
-
     font-size: 28px;
-
 }
-
 
 .firma span {
-
     color: #ffd76b;
-
     margin: 0 10px;
-
 }
 
-
-/* =========================================
-   REPRODUCTOR
-========================================= */
-
-.reproductor {
-
-    position: fixed;
-
-    bottom: 15px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width:
-        min(
-            90%,
-            600px
-        );
-
-    z-index: 100;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 12px 18px;
-
-    border-radius: 60px;
-
-    background:
-        rgba(
-            20,
-            5,
-            35,
-            .94
-        );
-
-    border:
-        1px solid
-        rgba(
-            255,
-            130,
-            200,
-            .5
-        );
-
-    box-shadow:
-        0 0 30px
-        rgba(
-            220,
-            60,
-            170,
-            .4
-        );
-
-    backdrop-filter:
-        blur(10px);
-
-}
-
-
-.disco {
-
-    width: 50px;
-
-    height: 50px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #c13f83,
-            #7045c4
-        );
-
-    font-size: 22px;
-
-}
-
-
-.infoMusica {
-
-    flex: 1;
-
-    display: flex;
-
-    flex-direction: column;
-
-    text-align: left;
-
-}
-
-
-.infoMusica strong {
-
-    color: #ffe0ef;
-
-}
-
-
-.infoMusica span {
-
-    color: #c7a7d1;
-
-    font-size: 12px;
-
-}
-
-
-#botonMusica {
-
-    width: 48px;
-
-    height: 48px;
-
-    flex-shrink: 0;
-
-    border: none;
-
-    border-radius: 50%;
-
-    cursor: pointer;
-
-    background:
-        linear-gradient(
-            135deg,
-            #c13f83,
-            #7045c4
-        );
-
-    color: white;
-
-    font-size: 18px;
-
-    box-shadow:
-        0 0 15px #dd4da2;
-
-}
-
-
-/* =========================================
-   VISOR
-========================================= */
+/* VISOR */
 
 .visor {
-
     position: fixed;
-
     inset: 0;
 
     z-index: 1000;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    background:
-        rgba(
-            3,
-            0,
-            10,
-            .96
-        );
+    background: rgba(3, 0, 10, .96);
 
     opacity: 0;
-
     visibility: hidden;
 
     transition: .35s;
-
 }
-
 
 .visor.activo {
-
     opacity: 1;
-
     visibility: visible;
-
 }
 
-
 #fotoGrande {
-
     max-width: 82%;
-
     max-height: 80vh;
 
     border-radius: 20px;
 
     object-fit: contain;
 
-    box-shadow:
-        0 0 45px #e84ba4;
+    box-shadow: 0 0 45px #e84ba4;
 
-    transform:
-        scale(.5);
-
-    transition:
-        transform .4s;
-
+    transform: scale(.5);
+    transition: transform .4s;
 }
-
 
 .visor.activo #fotoGrande {
-
-    transform:
-        scale(1);
-
+    transform: scale(1);
 }
 
-
 .cerrar {
-
     position: absolute;
 
     top: 20px;
-
     right: 25px;
 
     width: 50px;
-
     height: 50px;
 
     border: none;
-
     border-radius: 50%;
 
     cursor: pointer;
 
     background: white;
-
     color: #63254b;
 
     font-size: 30px;
-
 }
 
-
 .flecha {
-
     position: absolute;
-
     top: 50%;
 
     width: 50px;
-
     height: 50px;
 
     border: none;
-
     border-radius: 50%;
 
     cursor: pointer;
 
     background: white;
-
     color: #63254b;
 
     font-size: 35px;
-
 }
-
 
 .izquierda {
     left: 20px;
 }
 
-
 .derecha {
     right: 20px;
 }
 
-
 #contador {
-
     position: absolute;
-
     bottom: 25px;
-
     color: #ffd8eb;
-
 }
 
-
-/* =========================================
-   FOOTER
-========================================= */
+/* FOOTER */
 
 footer {
-
     position: relative;
-
     z-index: 5;
 
     text-align: center;
 
-    padding:
-        60px 20px 130px;
-
+    padding: 60px 20px 100px;
 }
 
-
 footer div {
-
     color: #ff6db5;
-
     font-size: 45px;
 
     text-shadow:
         0 0 20px #ff329a;
-
 }
-
 
 footer p {
-
     color: #ff9dcc;
-
     font-size: 25px;
-
 }
-
 
 footer span {
-
     color: #c8acd5;
-
     font-size: 13px;
-
 }
 
-
-/* =========================================
-   CELULAR
-========================================= */
+/* CELULAR */
 
 @media (max-width: 650px) {
 
     .portada h1 {
-
         font-size: 58px;
-
     }
-
 
     .subtitulo {
-
         font-size: 16px;
-
     }
-
 
     .galeria {
-
         gap: 12px;
-
     }
-
 
     .foto {
-
         border-radius: 15px;
-
     }
-
 
     #fotoGrande {
-
         max-width: 90%;
-
     }
-
 
     .flecha {
-
         width: 42px;
-
         height: 42px;
-
         font-size: 28px;
-
     }
-
 
     .izquierda {
-
         left: 8px;
-
     }
-
 
     .derecha {
-
         right: 8px;
-
     }
-
-
-    .infoMusica span {
-
-        display: none;
-
-    }
-
 }
 ```
- 

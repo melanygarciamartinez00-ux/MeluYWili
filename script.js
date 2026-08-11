@@ -4,9 +4,7 @@
 ========================================= */
 
 
-/* =========================================
-   IR A LA GALERÍA
-========================================= */
+/* IR A LA GALERÍA */
 
 function irGaleria() {
 
@@ -24,24 +22,17 @@ function irGaleria() {
 ========================================= */
 
 const fotos = [
-
     "./fotos/foto1.webp",
-
     "./fotos/foto2.webp",
-
     "./fotos/foto3.webp",
-
     "./fotos/foto4.webp"
-
 ];
 
 
 let fotoActual = 0;
 
 
-/* =========================================
-   ABRIR FOTO
-========================================= */
+/* ABRIR FOTO */
 
 function abrirFoto(numero) {
 
@@ -53,40 +44,26 @@ function abrirFoto(numero) {
         .getElementById("visor")
         .classList.add("activo");
 
-    document.body.style.overflow =
-        "hidden";
-
+    document.body.style.overflow = "hidden";
 }
 
 
-/* =========================================
-   MOSTRAR FOTO GRANDE
-========================================= */
+/* MOSTRAR FOTO */
 
 function mostrarFoto() {
 
     const imagen =
-        document.getElementById(
-            "fotoGrande"
-        );
+        document.getElementById("fotoGrande");
 
+    imagen.src = fotos[fotoActual];
 
-    imagen.src =
-        fotos[fotoActual];
-
-
-    document.getElementById(
-        "contador"
-    ).textContent =
-
+    document.getElementById("contador")
+        .textContent =
         `${fotoActual + 1} / ${fotos.length}`;
-
 }
 
 
-/* =========================================
-   CERRAR FOTO
-========================================= */
+/* CERRAR FOTO */
 
 function cerrarFoto() {
 
@@ -94,155 +71,76 @@ function cerrarFoto() {
         .getElementById("visor")
         .classList.remove("activo");
 
-    document.body.style.overflow =
-        "";
-
+    document.body.style.overflow = "";
 }
 
 
-/* =========================================
-   SIGUIENTE
-========================================= */
+/* SIGUIENTE */
 
 function fotoSiguiente() {
 
     fotoActual++;
 
-    if (
-        fotoActual >= fotos.length
-    ) {
-
+    if (fotoActual >= fotos.length) {
         fotoActual = 0;
-
     }
 
-
     mostrarFoto();
-
 }
 
 
-/* =========================================
-   ANTERIOR
-========================================= */
+/* ANTERIOR */
 
 function fotoAnterior() {
 
     fotoActual--;
 
-    if (
-        fotoActual < 0
-    ) {
-
-        fotoActual =
-            fotos.length - 1;
-
+    if (fotoActual < 0) {
+        fotoActual = fotos.length - 1;
     }
 
-
     mostrarFoto();
-
 }
 
 
-/* =========================================
-   CERRAR TOCANDO AFUERA
-========================================= */
+/* CERRAR TOCANDO AFUERA */
 
 document
     .getElementById("visor")
-    .addEventListener(
-        "click",
-        function(event) {
+    .addEventListener("click", function(event) {
 
-            if (
-                event.target === this
-            ) {
-
-                cerrarFoto();
-
-            }
-
-        }
-    );
-
-
-/* =========================================
-   TECLADO
-========================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        const visor =
-            document.getElementById(
-                "visor"
-            );
-
-
-        if (
-            !visor.classList.contains(
-                "activo"
-            )
-        ) {
-
-            return;
-
-        }
-
-
-        if (
-            event.key === "Escape"
-        ) {
-
+        if (event.target === this) {
             cerrarFoto();
-
         }
 
-
-        if (
-            event.key === "ArrowRight"
-        ) {
-
-            fotoSiguiente();
-
-        }
+    });
 
 
-        if (
-            event.key === "ArrowLeft"
-        ) {
+/* TECLADO */
 
-            fotoAnterior();
+document.addEventListener("keydown", function(event) {
 
-        }
+    const visor =
+        document.getElementById("visor");
 
+    if (!visor.classList.contains("activo")) {
+        return;
     }
-);
 
-
-/* =========================================
-   MÚSICA
-========================================= */
-const musica = document.getElementById("musica");
-const botonMusica = document.getElementById("botonMusica");
-
-botonMusica.addEventListener("click", async () => {
-    try {
-        if (musica.paused) {
-            await musica.play();
-            botonMusica.textContent = "❚❚";
-        } else {
-            musica.pause();
-            botonMusica.textContent = "▶";
-        }
-    } catch (error) {
-        console.error("Error al reproducir:", error);
-        alert("No se pudo reproducir la canción. Revisa que el archivo cancion.mp3 esté en la carpeta musica.");
+    if (event.key === "Escape") {
+        cerrarFoto();
     }
+
+    if (event.key === "ArrowRight") {
+        fotoSiguiente();
+    }
+
+    if (event.key === "ArrowLeft") {
+        fotoAnterior();
+    }
+
 });
 
-musica.addEventListener("ended", () => {
-    botonMusica.textContent = "▶";
-});
+
+console.log("💗 Melu y Wili cargado correctamente 💗");
+```
