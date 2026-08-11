@@ -1,142 +1,153 @@
 ```javascript
-/* =========================
+/* =========================================
    MELU & WILI
-   JAVASCRIPT
-========================= */
+========================================= */
 
 
-/* =========================
-   BOTÓN DE ENTRAR
-========================= */
+/* =========================================
+   IR A LA GALERÍA
+========================================= */
 
-function entrar() {
+function irGaleria() {
 
-    const galeria =
-        document.getElementById("galeria");
+    document
+        .getElementById("galeria")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
-    galeria.scrollIntoView({
-        behavior: "smooth"
-    });
 }
 
 
-/* =========================
-   FOTOS
-   EXACTAMENTE 4
-========================= */
+/* =========================================
+   LAS 4 FOTOS
+========================================= */
 
 const fotos = [
-    "fotos/foto1.webp",
-    "fotos/foto2.webp",
-    "fotos/foto3.webp",
-    "fotos/foto4.webp"
+
+    "./fotos/foto1.webp",
+
+    "./fotos/foto2.webp",
+
+    "./fotos/foto3.webp",
+
+    "./fotos/foto4.webp"
+
 ];
 
 
 let fotoActual = 0;
 
 
-/* =========================
+/* =========================================
    ABRIR FOTO
-========================= */
+========================================= */
 
-function abrirFoto(elemento) {
+function abrirFoto(numero) {
 
-    const imagen =
-        elemento.querySelector("img");
-
-    const ruta =
-        imagen.getAttribute("src");
-
-    fotoActual =
-        fotos.indexOf(ruta);
-
-    if (fotoActual === -1) {
-        fotoActual = 0;
-    }
+    fotoActual = numero;
 
     mostrarFoto();
 
-    const visor =
-        document.getElementById("visor");
-
-    visor.classList.add("activo");
+    document
+        .getElementById("visor")
+        .classList.add("activo");
 
     document.body.style.overflow =
         "hidden";
+
 }
 
 
-/* =========================
+/* =========================================
    MOSTRAR FOTO GRANDE
-========================= */
+========================================= */
 
 function mostrarFoto() {
 
-    const fotoGrande =
-        document.getElementById("fotoGrande");
+    const imagen =
+        document.getElementById(
+            "fotoGrande"
+        );
 
-    fotoGrande.src =
+
+    imagen.src =
         fotos[fotoActual];
 
-    document.getElementById("contador")
-        .textContent =
+
+    document.getElementById(
+        "contador"
+    ).textContent =
+
         `${fotoActual + 1} / ${fotos.length}`;
+
 }
 
 
-/* =========================
+/* =========================================
    CERRAR FOTO
-========================= */
+========================================= */
 
 function cerrarFoto() {
 
-    const visor =
-        document.getElementById("visor");
-
-    visor.classList.remove("activo");
+    document
+        .getElementById("visor")
+        .classList.remove("activo");
 
     document.body.style.overflow =
         "";
+
 }
 
 
-/* =========================
-   SIGUIENTE FOTO
-========================= */
+/* =========================================
+   SIGUIENTE
+========================================= */
 
-function siguiente() {
+function fotoSiguiente() {
 
     fotoActual++;
 
-    if (fotoActual >= fotos.length) {
+    if (
+        fotoActual >= fotos.length
+    ) {
+
         fotoActual = 0;
+
     }
 
+
     mostrarFoto();
+
 }
 
 
-/* =========================
-   FOTO ANTERIOR
-========================= */
+/* =========================================
+   ANTERIOR
+========================================= */
 
-function anterior() {
+function fotoAnterior() {
 
     fotoActual--;
 
-    if (fotoActual < 0) {
+    if (
+        fotoActual < 0
+    ) {
+
         fotoActual =
             fotos.length - 1;
+
     }
 
+
     mostrarFoto();
+
 }
 
 
-/* =========================
+/* =========================================
    CERRAR TOCANDO AFUERA
-========================= */
+========================================= */
 
 document
     .getElementById("visor")
@@ -147,94 +158,134 @@ document
             if (
                 event.target === this
             ) {
+
                 cerrarFoto();
+
             }
 
         }
     );
 
 
-/* =========================
+/* =========================================
    TECLADO
-========================= */
+========================================= */
 
 document.addEventListener(
     "keydown",
     function(event) {
 
         const visor =
-            document.getElementById("visor");
+            document.getElementById(
+                "visor"
+            );
+
 
         if (
             !visor.classList.contains(
                 "activo"
             )
         ) {
+
             return;
+
         }
 
 
-        if (event.key === "Escape") {
+        if (
+            event.key === "Escape"
+        ) {
+
             cerrarFoto();
+
         }
 
 
-        if (event.key === "ArrowRight") {
-            siguiente();
+        if (
+            event.key === "ArrowRight"
+        ) {
+
+            fotoSiguiente();
+
         }
 
 
-        if (event.key === "ArrowLeft") {
-            anterior();
+        if (
+            event.key === "ArrowLeft"
+        ) {
+
+            fotoAnterior();
+
         }
 
     }
 );
 
 
-/* =========================
+/* =========================================
    MÚSICA
-========================= */
+========================================= */
 
-const audio =
-    document.getElementById("audio");
+const musica =
+    document.getElementById(
+        "musica"
+    );
 
-const play =
-    document.getElementById("play");
+
+const botonMusica =
+    document.getElementById(
+        "botonMusica"
+    );
+
 
 let reproduciendo = false;
 
 
-play.addEventListener(
+botonMusica.addEventListener(
     "click",
     function() {
 
-        if (reproduciendo) {
 
-            audio.pause();
+        if (
+            reproduciendo
+        ) {
 
-            play.textContent = "▶";
+            musica.pause();
 
-            reproduciendo = false;
+            botonMusica.textContent =
+                "▶";
 
-        } else {
+            reproduciendo =
+                false;
 
-            audio.play()
-                .then(function() {
+        }
 
-                    play.textContent =
-                        "❚❚";
 
-                    reproduciendo = true;
+        else {
 
-                })
-                .catch(function() {
+            musica
+                .play()
+                .then(
+                    function() {
 
-                    alert(
-                        "No se pudo reproducir la música. Revisa que cancion.mp3 esté dentro de la carpeta musica."
-                    );
+                        botonMusica
+                            .textContent =
+                            "❚❚";
 
-                });
+                        reproduciendo =
+                            true;
+
+                    }
+                )
+                .catch(
+                    function() {
+
+                        alert(
+                            "No se pudo reproducir la música. Comprueba que cancion.mp3 esté dentro de la carpeta musica."
+                        );
+
+                    }
+                );
 
         }
 
@@ -242,25 +293,27 @@ play.addEventListener(
 );
 
 
-/* =========================
+/* =========================================
    CUANDO TERMINA LA CANCIÓN
-========================= */
+========================================= */
 
-audio.addEventListener(
+musica.addEventListener(
     "ended",
     function() {
 
-        play.textContent = "▶";
+        botonMusica.textContent =
+            "▶";
 
-        reproduciendo = false;
+        reproduciendo =
+            false;
 
     }
 );
 
 
-/* =========================
-   MENSAJE DE COMPROBACIÓN
-========================= */
+/* =========================================
+   COMPROBACIÓN
+========================================= */
 
 console.log(
     "💗 Melu y Wili cargado correctamente 💗"
