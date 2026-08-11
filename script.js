@@ -5,19 +5,32 @@
 
 
 /* IR A LA GALERÍA */
+ 
+     
+       function irGaleria() {
 
-function irGaleria() {
-function irGaleria() {
+    var musica = document.getElementById("musica");
 
-    const musica = document.getElementById("musica");
+    if (musica) {
+        musica.currentTime = 0;
 
-    musica.play();
- document.getElementById("contador").textContent =
-    (fotoActual + 1) + " / " + fotos.length;   });
+        musica.play()
+            .then(function () {
+                console.log("🎵 Música iniciada correctamente");
+            })
+            .catch(function (error) {
+                console.error("Error al reproducir:", error);
+            });
+    }
 
-}
-    
-        
+    var galeria = document.getElementById("galeria");
+
+    if (galeria) {
+        galeria.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+} 
 
 /* =========================================
    LAS 4 FOTOS
