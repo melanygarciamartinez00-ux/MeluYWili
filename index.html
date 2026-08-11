@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,130 +6,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>💗 Melu y Wili 💗</title>
+    <title>Melu & Wili 💗</title>
 
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =====================================
-         FONDO DE GALAXIA
-    ====================================== -->
+    <section class="portada">
 
-    <div class="galaxia"></div>
-    <div class="estrellas"></div>
+        <div class="estrellas"></div>
 
-    <!-- CORAZONES FLOTANTES -->
+        <div class="corazones">
+            <span>♥</span>
+            <span>♡</span>
+            <span>♥</span>
+            <span>♡</span>
+            <span>♥</span>
+            <span>♡</span>
+            <span>♥</span>
+            <span>♡</span>
+        </div>
 
-    <div id="corazones"></div>
-
-
-    <!-- =====================================
-         PORTADA
-    ====================================== -->
-
-    <header class="portada">
-
-        <div class="contenido-portada">
+        <div class="contenido">
 
             <p class="pequeno">
-                ✨ Una historia especial ✨
+                ✦ UNA HISTORIA ESPECIAL ✦
             </p>
 
             <h1>
-                <span>Melu</span>
-                <b>♥</b>
-                <span>Wili</span>
+                <span class="melu">Melu</span>
+                <span class="amp">&</span>
+                <span class="wili">Wili</span>
             </h1>
 
+            <div class="linea"></div>
+
             <p class="subtitulo">
-                Dos personas, muchos momentos y recuerdos
-                que quedan para siempre. 💗
+                Dos personas, muchos recuerdos
+                y momentos especiales. ✨
             </p>
 
-            <button
-                class="boton-comenzar"
-                onclick="irAGaleria()">
-
-                Ver nuestros recuerdos 💕
+            <button onclick="entrar()">
+                Ver nuestros recuerdos 💗
             </button>
-
-        </div>
-
-    </header>
-
-
-    <!-- =====================================
-         HISTORIA
-    ====================================== -->
-
-    <section class="historia">
-
-        <div class="tarjeta">
-
-            <div class="corazon-grande">
-                💗
-            </div>
-
-            <h2>
-                ✨ Melu y Wili ✨
-            </h2>
-
-            <p>
-                Hay momentos que parecen pequeños,
-                pero terminan convirtiéndose en recuerdos enormes.
-            </p>
-
-            <p>
-                Esta pequeña página guarda algunos de esos
-                momentos especiales. 📸💗
-            </p>
 
         </div>
 
     </section>
 
 
-    <!-- =====================================
-         GALERÍA
-    ====================================== -->
+    <section id="galeria" class="seccion">
 
-    <section
-        class="galeria"
-        id="galeria">
+        <p class="etiqueta">
+            ✦ NUESTROS RECUERDOS ✦
+        </p>
 
-        <div class="galeria-contenido">
-<div class="galeria">
+        <h2>
+            Melu & Wili 📸
+        </h2>
 
- <section id="galeria" class="seccion">
+        <p class="descripcion">
+            Toca una foto para verla grande.
+        </p>
 
-    <p class="etiqueta">✦ NUESTROS RECUERDOS ✦</p>
 
-    <h2>💗 Melu & Wili 💗</h2>
+        <div class="galeria">
 
-    <p class="descripcion">
-        Toca una fotografía para verla más grande ✨
-    </p>
+            <div class="foto" onclick="abrirFoto(this)">
+                <img src="fotos/foto1.jpg">
+            </div>
 
-    <div class="galeria">
+            <div class="foto" onclick="abrirFoto(this)">
+                <img src="fotos/foto2.jpg">
+            </div>
 
-        <div class="foto" onclick="abrirFoto(this)">
-            <img src="fotos/foto1.webp" alt="Melu y Wili - Foto 1">
+            <div class="foto" onclick="abrirFoto(this)">
+                <img src="fotos/foto3.jpg">
+            </div>
+
+            <div class="foto" onclick="abrirFoto(this)">
+                <img src="fotos/foto4.jpg">
+            </div>
+
+            <div class="foto" onclick="abrirFoto(this)">
+                <img src="fotos/foto5.jpg">
+            </div>
+
+            <div class="foto" onclick="abrirFoto(this)">
+                <img src="fotos/foto6.jpg">
+            </div>
+
         </div>
 
-        <div class="foto" onclick="abrirFoto(this)">
-            <img src="fotos/foto2.webp" alt="Melu y Wili - Foto 2">
+    </section>
+
+
+    <section class="mensaje">
+
+        <div class="tarjeta">
+
+            <div class="estrella">✦</div>
+
+            <h2>
+                Melu 💗 Wili
+            </h2>
+
+            <p>
+                Cada fotografía guarda un recuerdo
+                especial. ✨
+            </p>
+
+            <div class="firma">
+                Melu <span>♡</span> Wili
+            </div>
+
         </div>
 
-        <div class="foto" onclick="abrirFoto(this)">
-            <img src="fotos/foto3.webp" alt="Melu y Wili - Foto 3">
+    </section>
+
+
+    <section class="musica">
+
+        <div class="reproductor">
+
+            <div class="disco">
+                ♪
+            </div>
+
+            <div class="info">
+                <strong>Melu & Wili</strong>
+                <span>Nuestra canción ♡</span>
+            </div>
+
+            <button id="play">
+                ▶
+            </button>
+
         </div>
 
-        <div class="foto" onclick="abrirFoto(this)">
-            <img src="fotos/foto4.webp" alt="Melu y Wili - Foto 4">
-        </div>
+        <audio id="audio" src="musica/cancion.mp3"></audio>
+
+    </section>
+
+
+    <div id="visor" class="visor">
+
+        <button class="cerrar" onclick="cerrarFoto()">
+            ×
+        </button>
+
+        <button class="flecha izquierda" onclick="anterior()">
+            ‹
+        </button>
+
+        <img id="fotoGrande">
+
+        <button class="flecha derecha" onclick="siguiente()">
+            ›
+        </button>
+
+        <p id="contador"></p>
 
     </div>
 
-</section>
+
+    <footer>
+
+        <div>♥</div>
+
+        <p>
+            Melu & Wili
+        </p>
+
+        <span>
+            Hecho con cariño ✨
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
