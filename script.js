@@ -61,9 +61,8 @@ function mostrarFoto() {
 
     imagen.src = fotos[fotoActual];
 
-    document.getElementById("contador")
-        .textContent =
-        `${fotoActual + 1} / ${fotos.length}`;
+  document.getElementById("contador").textContent =
+    (fotoActual + 1) + " / " + fotos.length; 
 }
 
 
