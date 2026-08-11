@@ -7,15 +7,19 @@
 /* IR A LA GALERÍA */
 
 function irGaleria() {
+function irGaleria() {
 
-    document
-        .getElementById("galeria")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+    const musica = document.getElementById("musica");
+
+    musica.play();
+
+    document.getElementById("galeria").scrollIntoView({
+        behavior: "smooth"
+    });
 
 }
-
+    
+        
 
 /* =========================================
    LAS 4 FOTOS
