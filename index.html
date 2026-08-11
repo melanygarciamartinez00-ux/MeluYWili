@@ -235,20 +235,32 @@ ang="es">
         <!-- =================================
              REPRODUCTOR
         ================================== -->
+```javascript
+const musica = document.getElementById("musica");
+const botonMusica = document.getElementById("botonMusica");
 
-        <div class="reproductor">
+botonMusica.onclick = function () {
 
-    <div class="disco">♪</div>
+    if (musica.paused) {
 
-    <div class="infoMusica">
-        <strong>Melu & Wili</strong>
-        <span>Nuestra canción ♡</span>
-    </div>
+        musica.play()
+            .then(() => {
+                botonMusica.textContent = "❚❚";
+            })
+            .catch((error) => {
+                console.error(error);
+                alert("No se pudo reproducir la música.");
+            });
 
-    <button id="botonMusica" type="button">▶</button>
+    } else {
 
-    <audio id="musica">
-        <source src="./musica/cancion.mp3" type="audio/mpeg">
-    </audio>
+        musica.pause();
+        botonMusica.textContent = "▶";
 
-</div>
+    }
+
+};
+
+musica.onended = function () {
+    botonMusica.textContent = "▶";
+};
