@@ -225,97 +225,24 @@ document.addEventListener(
 /* =========================================
    MÚSICA
 ========================================= */
+const musica = document.getElementById("musica");
+const botonMusica = document.getElementById("botonMusica");
 
-const musica =
-    document.getElementById(
-        "musica"
-    );
-
-
-const botonMusica =
-    document.getElementById(
-        "botonMusica"
-    );
-
-
-let reproduciendo = false;
-
-
-botonMusica.addEventListener(
-    "click",
-    function() {
-
-
-        if (
-            reproduciendo
-        ) {
-
+botonMusica.addEventListener("click", async () => {
+    try {
+        if (musica.paused) {
+            await musica.play();
+            botonMusica.textContent = "❚❚";
+        } else {
             musica.pause();
-
-            botonMusica.textContent =
-                "▶";
-
-            reproduciendo =
-                false;
-
+            botonMusica.textContent = "▶";
         }
-
-
-        else {
-
-            musica
-                .play()
-                .then(
-                    function() {
-
-                        botonMusica
-                            .textContent =
-                            "❚❚";
-
-                        reproduciendo =
-                            true;
-
-                    }
-                )
-                .catch(
-                    function() {
-
-                        alert(
-                            "No se pudo reproducir la música. Comprueba que cancion.mp3 esté dentro de la carpeta musica."
-                        );
-
-                    }
-                );
-
-        }
-
+    } catch (error) {
+        console.error("Error al reproducir:", error);
+        alert("No se pudo reproducir la canción. Revisa que el archivo cancion.mp3 esté en la carpeta musica.");
     }
-);
+});
 
-
-/* =========================================
-   CUANDO TERMINA LA CANCIÓN
-========================================= */
-
-musica.addEventListener(
-    "ended",
-    function() {
-
-        botonMusica.textContent =
-            "▶";
-
-        reproduciendo =
-            false;
-
-    }
-);
-
-
-/* =========================================
-   COMPROBACIÓN
-========================================= */
-
-console.log(
-    "💗 Melu y Wili cargado correctamente 💗"
-);
-```
+musica.addEventListener("ended", () => {
+    botonMusica.textContent = "▶";
+});
