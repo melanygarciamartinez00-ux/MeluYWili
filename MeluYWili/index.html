@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>💗 Melu y Wili 💗</title>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         FONDO DE GALAXIA
+    ====================================== -->
+
+    <div class="galaxia"></div>
+    <div class="estrellas"></div>
+
+    <!-- CORAZONES FLOTANTES -->
+
+    <div id="corazones"></div>
+
+
+    <!-- =====================================
+         PORTADA
+    ====================================== -->
+
+    <header class="portada">
+
+        <div class="contenido-portada">
+
+            <p class="pequeno">
+                ✨ Una historia especial ✨
+            </p>
+
+            <h1>
+                <span>Melu</span>
+                <b>♥</b>
+                <span>Wili</span>
+            </h1>
+
+            <p class="subtitulo">
+                Dos personas, muchos momentos y recuerdos
+                que quedan para siempre. 💗
+            </p>
+
+            <button
+                class="boton-comenzar"
+                onclick="irAGaleria()">
+
+                Ver nuestros recuerdos 💕
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         HISTORIA
+    ====================================== -->
+
+    <section class="historia">
+
+        <div class="tarjeta">
+
+            <div class="corazon-grande">
+                💗
+            </div>
+
+            <h2>
+                ✨ Melu y Wili ✨
+            </h2>
+
+            <p>
+                Hay momentos que parecen pequeños,
+                pero terminan convirtiéndose en recuerdos enormes.
+            </p>
+
+            <p>
+                Esta pequeña página guarda algunos de esos
+                momentos especiales. 📸💗
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         GALERÍA
+    ====================================== -->
+
+    <section
+        class="galeria"
+        id="galeria">
+
+        <div class="galeria-contenido">
+
+            <p class="titulo-pequeno">
+                📸 NUESTROS RECUERDOS
+            </p>
+
+            <h2>
+                💗 Melu
+                <span>&</span>
+                Wili 💗
+            </h2>
+
+            <p class="descripcion">
+                Algunos momentos que merecen
+                quedarse guardados. ✨
+            </p>
+
+
+            <!-- FOTOS -->
+
+            <div class="fotos">
+
+                <div class="foto">
+
+                    <img
+                        src="fotos/foto1.webp"
+                        alt="Recuerdo 1">
+
+                    <div class="numero">
+                        01
+                    </div>
+
+                </div>
+
+
+                <div class="foto">
+
+                    <img
+                        src="fotos/foto2.webp"
+                        alt="Recuerdo 2">
+
+                    <div class="numero">
+                        02
+                    </div>
+
+                </div>
+
+
+                <div class="foto">
+
+                    <img
+                        src="fotos/foto3.webp"
+                        alt="Recuerdo 3">
+
+                    <div class="numero">
+                        03
+                    </div>
+
+                </div>
+
+
+                <div class="foto">
+
+                    <img
+                        src="fotos/foto4.webp"
+                        alt="Recuerdo 4">
+
+                    <div class="numero">
+                        04
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FRASE
+    ====================================== -->
+
+    <section class="frase">
+
+        <div class="linea"></div>
+
+        <div class="frase-contenido">
+
+            <span>“</span>
+
+            <p>
+                Los mejores recuerdos son aquellos
+                que nos hacen sonreír cada vez
+                que los recordamos.
+            </p>
+
+            <span>”</span>
+
+        </div>
+
+        <div class="linea"></div>
+
+    </section>
+
+
+    <!-- =====================================
+         MÚSICA
+    ====================================== -->
+
+    <section class="musica">
+
+        <div class="disco">
+            🎵
+        </div>
+
+        <h2>
+            🎶 Nuestra música
+        </h2>
+
+        <p>
+            Dale play para acompañar los recuerdos. 💗
+        </p>
+
+
+        <audio
+            id="musica"
+            controls
+            loop>
+
+            <source
+                src="musica/cancion.mp3"
+                type="audio/mpeg">
+
+            Tu navegador no puede reproducir este audio.
+
+        </audio>
+
+
+        <button
+            class="boton-musica"
+            onclick="controlarMusica()">
+
+            ▶ Reproducir / Pausar
+
+        </button>
+
+    </section>
+
+
+    <!-- =====================================
+         FINAL
+    ====================================== -->
+
+    <footer>
+
+        <div class="corazones-finales">
+            💗 ✨ 💕 ✨ 💗
+        </div>
+
+        <h2>
+            Melu <span>♥</span> Wili
+        </h2>
+
+        <p>
+            Hecho con cariño 💗
+        </p>
+
+        <p class="fecha">
+            2026 ✨
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
