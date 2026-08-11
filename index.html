@@ -13,22 +13,29 @@
 
 <body>
 
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
     <section class="portada">
 
         <div class="estrellas"></div>
 
+        <div class="planeta planeta1"></div>
+        <div class="planeta planeta2"></div>
+
         <div class="corazones">
-            <span>♥</span>
             <span>♡</span>
-            <span>♥</span>
             <span>♡</span>
-            <span>♥</span>
             <span>♡</span>
-            <span>♥</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
             <span>♡</span>
         </div>
 
-        <div class="contenido">
+        <div class="portada-contenido">
 
             <p class="pequeno">
                 ✦ UNA HISTORIA ESPECIAL ✦
@@ -36,7 +43,7 @@
 
             <h1>
                 <span class="melu">Melu</span>
-                <span class="amp">&</span>
+                <span class="ampersand">&</span>
                 <span class="wili">Wili</span>
             </h1>
 
@@ -44,57 +51,188 @@
 
             <p class="subtitulo">
                 Dos personas, muchos recuerdos
-                y momentos especiales. ✨
+                y momentos que merecen quedarse
+                para siempre. ✨
             </p>
 
-            <button onclick="entrar()">
-                Ver nuestros recuerdos 💗
+            <button
+                class="boton"
+                onclick="entrar()">
+
+                Entrar a nuestros recuerdos 💗
+
             </button>
 
+        </div>
+
+        <div class="scroll">
+            ↓
         </div>
 
     </section>
 
 
-    <section id="galeria" class="seccion">
+    <!-- =========================
+         INTRODUCCIÓN
+    ========================== -->
+
+    <section class="seccion introduccion">
+
+        <p class="etiqueta">
+            ✦ NUESTRA HISTORIA ✦
+        </p>
+
+        <h2>
+            Un recuerdo a la vez
+        </h2>
+
+        <p class="texto-intro">
+            Hay momentos que duran unos segundos,
+            pero que pueden convertirse en recuerdos
+            para toda la vida.
+        </p>
+
+        <div class="decoracion">
+            ✦ ♡ ✦
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALERÍA
+    ========================== -->
+
+    <section
+        id="galeria"
+        class="seccion galeria-seccion">
 
         <p class="etiqueta">
             ✦ NUESTROS RECUERDOS ✦
         </p>
 
         <h2>
-            Melu & Wili 📸
+            Momentos especiales 📸
         </h2>
 
         <p class="descripcion">
-            Toca una foto para verla grande.
+            Toca una fotografía para verla más grande.
         </p>
 
 
         <div class="galeria">
 
-            <div class="foto" onclick="abrirFoto(this)">
-                <img src="fotos/foto1.jpg">
+            <div
+                class="foto-card"
+                onclick="abrirFoto(this)">
+
+                <img
+                    src="fotos/foto1.jpg"
+                    alt="Recuerdo 1">
+
+                <div class="numero">
+                    01
+                </div>
+
+                <div class="corazon-foto">
+                    ♡
+                </div>
+
             </div>
 
-            <div class="foto" onclick="abrirFoto(this)">
-                <img src="fotos/foto2.jpg">
+
+            <div
+                class="foto-card"
+                onclick="abrirFoto(this)">
+
+                <img
+                    src="fotos/foto2.jpg"
+                    alt="Recuerdo 2">
+
+                <div class="numero">
+                    02
+                </div>
+
+                <div class="corazon-foto">
+                    ♡
+                </div>
+
             </div>
 
-            <div class="foto" onclick="abrirFoto(this)">
-                <img src="fotos/foto3.jpg">
+
+            <div
+                class="foto-card"
+                onclick="abrirFoto(this)">
+
+                <img
+                    src="fotos/foto3.jpg"
+                    alt="Recuerdo 3">
+
+                <div class="numero">
+                    03
+                </div>
+
+                <div class="corazon-foto">
+                    ♡
+                </div>
+
             </div>
 
-            <div class="foto" onclick="abrirFoto(this)">
-                <img src="fotos/foto4.jpg">
+
+            <div
+                class="foto-card"
+                onclick="abrirFoto(this)">
+
+                <img
+                    src="fotos/foto4.jpg"
+                    alt="Recuerdo 4">
+
+                <div class="numero">
+                    04
+                </div>
+
+                <div class="corazon-foto">
+                    ♡
+                </div>
+
             </div>
 
-            <div class="foto" onclick="abrirFoto(this)">
-                <img src="fotos/foto5.jpg">
+
+            <div
+                class="foto-card"
+                onclick="abrirFoto(this)">
+
+                <img
+                    src="fotos/foto5.jpg"
+                    alt="Recuerdo 5">
+
+                <div class="numero">
+                    05
+                </div>
+
+                <div class="corazon-foto">
+                    ♡
+                </div>
+
             </div>
 
-            <div class="foto" onclick="abrirFoto(this)">
-                <img src="fotos/foto6.jpg">
+
+            <div
+                class="foto-card"
+                onclick="abrirFoto(this)">
+
+                <img
+                    src="fotos/foto6.jpg"
+                    alt="Recuerdo 6">
+
+                <div class="numero">
+                    06
+                </div>
+
+                <div class="corazon-foto">
+                    ♡
+                </div>
+
             </div>
 
         </div>
@@ -102,29 +240,48 @@
     </section>
 
 
-    <section class="mensaje">
+    <!-- =========================
+         MENSAJE
+    ========================== -->
 
-        <div class="tarjeta">
+    <section class="seccion mensaje">
 
-            <div class="estrella">✦</div>
+        <div class="mensaje-card">
+
+            <div class="estrella-grande">
+                ✦
+            </div>
+
+            <p class="etiqueta">
+                PARA NOSOTROS
+            </p>
 
             <h2>
-                Melu 💗 Wili
+                Algunos recuerdos
+                nunca pierden su brillo. ✨
             </h2>
 
             <p>
-                Cada fotografía guarda un recuerdo
-                especial. ✨
+                Cada fotografía guarda un momento,
+                una sonrisa o una pequeña historia.
+                Y aunque el tiempo pase, esos recuerdos
+                siempre tendrán un lugar especial.
             </p>
 
             <div class="firma">
-                Melu <span>♡</span> Wili
+                <span>Melu</span>
+                <b>♡</b>
+                <span>Wili</span>
             </div>
 
         </div>
 
     </section>
 
+
+    <!-- =========================
+         REPRODUCTOR
+    ========================== -->
 
     <section class="musica">
 
@@ -134,46 +291,107 @@
                 ♪
             </div>
 
-            <div class="info">
-                <strong>Melu & Wili</strong>
-                <span>Nuestra canción ♡</span>
+            <div class="info-musica">
+
+                <strong>
+                    Melu & Wili
+                </strong>
+
+                <span>
+                    Nuestra canción ♡
+                </span>
+
             </div>
 
-            <button id="play">
+            <button
+                id="anterior"
+                class="control">
+
+                ⏮
+
+            </button>
+
+            <button
+                id="play"
+                class="play">
+
                 ▶
+
+            </button>
+
+            <button
+                id="siguiente"
+                class="control">
+
+                ⏭
+
             </button>
 
         </div>
 
-        <audio id="audio" src="musica/cancion.mp3"></audio>
+        <audio
+            id="audio"
+            src="musica/cancion.mp3">
+        </audio>
 
     </section>
 
 
-    <div id="visor" class="visor">
+    <!-- =========================
+         VISOR DE FOTOS
+    ========================== -->
 
-        <button class="cerrar" onclick="cerrarFoto()">
+    <div
+        id="visor"
+        class="visor">
+
+        <button
+            class="cerrar"
+            onclick="cerrarFoto()">
+
             ×
+
         </button>
 
-        <button class="flecha izquierda" onclick="anterior()">
+
+        <button
+            class="flecha izquierda"
+            onclick="fotoAnterior(event)">
+
             ‹
+
         </button>
 
-        <img id="fotoGrande">
 
-        <button class="flecha derecha" onclick="siguiente()">
+        <img
+            id="fotoGrande"
+            src=""
+            alt="Foto ampliada">
+
+
+        <button
+            class="flecha derecha"
+            onclick="fotoSiguiente(event)">
+
             ›
+
         </button>
+
 
         <p id="contador"></p>
 
     </div>
 
 
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
-        <div>♥</div>
+        <div class="footer-corazon">
+            ♡
+        </div>
 
         <p>
             Melu & Wili
@@ -189,5 +407,6 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
 ```

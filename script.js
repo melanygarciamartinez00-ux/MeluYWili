@@ -1,161 +1,226 @@
-/* =====================================
-   IR A LA GALERÍA
-===================================== */
+```javascript
+/* =========================
+   ENTRAR
+========================= */
 
-function irAGaleria() {
+function entrar() {
 
-    const galeria =
-        document.getElementById("galeria");
-
-    if (galeria) {
-
-        galeria.scrollIntoView({
+    document
+        .getElementById("galeria")
+        .scrollIntoView({
             behavior: "smooth"
         });
-
-    }
 }
 
 
-/* =====================================
-   CONTROL DE MÚSICA
-===================================== */
+/* =========================
+   FOTOS
+========================= */
 
-function controlarMusica() {
+const tarjetas =
+    document.querySelectorAll(".foto");
 
-    const musica =
-        document.getElementById("musica");
+const fotos = [];
 
-    if (!musica) return;
+tarjetas.forEach(function(tarjeta) {
+
+    const imagen =
+        tarjeta.querySelector("img");
+
+    fotos.push(imagen.src);
+
+});
 
 
-    if (musica.paused) {
+let fotoActual = 0;
 
-        musica.play()
-            .catch(() => {
 
-                console.log(
-                    "El navegador necesita que se presione Play."
-                );
+/* ABRIR FOTO */
 
-            });
+function abrirFoto(elemento) {
 
-    } else {
+    fotoActual =
+        Array.from(tarjetas)
+        .indexOf(elemento);
 
-        musica.pause();
+    mostrarFoto();
 
-    }
+    document
+        .getElementById("visor")
+        .classList.add("activo");
+
+    document.body.style.overflow =
+        "hidden";
 }
 
 
-/* =====================================
-   CORAZONES FLOTANTES
-===================================== */
+/* MOSTRAR FOTO */
 
-function crearCorazon() {
+function mostrarFoto() {
 
-    const contenedor =
-        document.getElementById("corazones");
+    document
+        .getElementById("fotoGrande")
+        .src =
+        fotos[fotoActual];
 
-    if (!contenedor) return;
+    document
+        .getElementById("contador")
+        .textContent =
+        (fotoActual + 1)
+        + " / "
+        + fotos.length;
+}
 
 
-    const corazon =
-        document.createElement("div");
+/* CERRAR */
+
+function cerrarFoto() {
+
+    document
+        .getElementById("visor")
+        .classList.remove("activo");
+
+    document.body.style.overflow =
+        "";
+}
 
 
-    corazon.classList.add(
-        "corazon-flotante"
+/* SIGUIENTE */
+
+function siguiente() {
+
+    fotoActual++;
+
+    if (fotoActual >= fotos.length) {
+        fotoActual = 0;
+    }
+
+    mostrarFoto();
+}
+
+
+/* ANTERIOR */
+
+function anterior() {
+
+    fotoActual--;
+
+    if (fotoActual < 0) {
+        fotoActual = fotos.length - 1;
+    }
+
+    mostrarFoto();
+}
+
+
+/* CERRAR AL TOCAR AFUERA */
+
+document
+    .getElementById("visor")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+                cerrarFoto();
+            }
+
+        }
     );
 
 
-    const tipos = [
+/* =========================
+   MÚSICA
+========================= */
 
-        "💗",
-        "💕",
-        "💖",
-        "💓",
-        "💞",
-        "✨"
+const audio =
+    document.getElementById("audio");
 
-    ];
+const play =
+    document.getElementById("play");
 
-
-    corazon.innerHTML =
-        tipos[
-            Math.floor(
-                Math.random() *
-                tipos.length
-            )
-        ];
+let reproduciendo = false;
 
 
-    corazon.style.left =
-        Math.random() * 100 + "%";
+play.addEventListener(
+    "click",
+    function() {
 
+        if (reproduciendo) {
 
-    corazon.style.fontSize =
-        15 +
-        Math.random() * 25 +
-        "px";
+            audio.pause();
 
+            play.textContent = "▶";
 
-    corazon.style.animationDuration =
-        5 +
-        Math.random() * 5 +
-        "s";
+            reproduciendo = false;
 
+        } else {
 
-    contenedor.appendChild(
-        corazon
-    );
+            audio.play()
+                .then(function() {
 
+                    play.textContent = "❚❚";
 
-    setTimeout(() => {
+                    reproduciendo = true;
 
-        corazon.remove();
+                })
+                .catch(function() {
 
-    }, 10000);
-}
+                    alert(
+                        "Revisa que cancion.mp3 esté dentro de la carpeta musica."
+                    );
 
+                });
 
-/* =====================================
-   CREAR CORAZONES
-===================================== */
+        }
 
-setInterval(
-    crearCorazon,
-    700
+    }
 );
 
 
-/* Corazones iniciales */
+/* CUANDO TERMINA LA CANCIÓN */
 
-for (
-    let i = 0;
-    i < 8;
-    i++
-) {
+audio.addEventListener(
+    "ended",
+    function() {
 
-    setTimeout(
-        crearCorazon,
-        i * 300
-    );
+        play.textContent = "▶";
 
-}
-
-
-/* =====================================
-   CUANDO CARGA LA PÁGINA
-===================================== */
-
-window.addEventListener(
-    "load",
-    () => {
-
-        console.log(
-            "💗 Melu y Wili cargado correctamente 💗"
-        );
+        reproduciendo = false;
 
     }
 );
+
+
+/* TECLADO */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        const visor =
+            document.getElementById("visor");
+
+        if (
+            !visor.classList.contains("activo")
+        ) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+            cerrarFoto();
+        }
+
+        if (event.key === "ArrowRight") {
+            siguiente();
+        }
+
+        if (event.key === "ArrowLeft") {
+            anterior();
+        }
+
+    }
+);
+```
