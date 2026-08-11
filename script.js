@@ -1,91 +1,109 @@
 ```javascript
 /* =========================
-   ENTRAR
+   MELU & WILI
+   JAVASCRIPT
+========================= */
+
+
+/* =========================
+   BOTÓN DE ENTRAR
 ========================= */
 
 function entrar() {
 
-    document
-        .getElementById("galeria")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
+    const galeria =
+        document.getElementById("galeria");
+
+    galeria.scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
 
 /* =========================
    FOTOS
+   EXACTAMENTE 4
 ========================= */
 
-const tarjetas =
-    document.querySelectorAll(".foto");
-
-const fotos = [];
-
-tarjetas.forEach(function(tarjeta) {
-
-    const imagen =
-        tarjeta.querySelector("img");
-
-    fotos.push(imagen.src);
-
-});
+const fotos = [
+    "fotos/foto1.webp",
+    "fotos/foto2.webp",
+    "fotos/foto3.webp",
+    "fotos/foto4.webp"
+];
 
 
 let fotoActual = 0;
 
 
-/* ABRIR FOTO */
+/* =========================
+   ABRIR FOTO
+========================= */
 
 function abrirFoto(elemento) {
 
+    const imagen =
+        elemento.querySelector("img");
+
+    const ruta =
+        imagen.getAttribute("src");
+
     fotoActual =
-        Array.from(tarjetas)
-        .indexOf(elemento);
+        fotos.indexOf(ruta);
+
+    if (fotoActual === -1) {
+        fotoActual = 0;
+    }
 
     mostrarFoto();
 
-    document
-        .getElementById("visor")
-        .classList.add("activo");
+    const visor =
+        document.getElementById("visor");
+
+    visor.classList.add("activo");
 
     document.body.style.overflow =
         "hidden";
 }
 
 
-/* MOSTRAR FOTO */
+/* =========================
+   MOSTRAR FOTO GRANDE
+========================= */
 
 function mostrarFoto() {
 
-    document
-        .getElementById("fotoGrande")
-        .src =
+    const fotoGrande =
+        document.getElementById("fotoGrande");
+
+    fotoGrande.src =
         fotos[fotoActual];
 
-    document
-        .getElementById("contador")
+    document.getElementById("contador")
         .textContent =
-        (fotoActual + 1)
-        + " / "
-        + fotos.length;
+        `${fotoActual + 1} / ${fotos.length}`;
 }
 
 
-/* CERRAR */
+/* =========================
+   CERRAR FOTO
+========================= */
 
 function cerrarFoto() {
 
-    document
-        .getElementById("visor")
-        .classList.remove("activo");
+    const visor =
+        document.getElementById("visor");
+
+    visor.classList.remove("activo");
 
     document.body.style.overflow =
         "";
 }
 
 
-/* SIGUIENTE */
+/* =========================
+   SIGUIENTE FOTO
+========================= */
 
 function siguiente() {
 
@@ -99,21 +117,26 @@ function siguiente() {
 }
 
 
-/* ANTERIOR */
+/* =========================
+   FOTO ANTERIOR
+========================= */
 
 function anterior() {
 
     fotoActual--;
 
     if (fotoActual < 0) {
-        fotoActual = fotos.length - 1;
+        fotoActual =
+            fotos.length - 1;
     }
 
     mostrarFoto();
 }
 
 
-/* CERRAR AL TOCAR AFUERA */
+/* =========================
+   CERRAR TOCANDO AFUERA
+========================= */
 
 document
     .getElementById("visor")
@@ -129,6 +152,44 @@ document
 
         }
     );
+
+
+/* =========================
+   TECLADO
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        const visor =
+            document.getElementById("visor");
+
+        if (
+            !visor.classList.contains(
+                "activo"
+            )
+        ) {
+            return;
+        }
+
+
+        if (event.key === "Escape") {
+            cerrarFoto();
+        }
+
+
+        if (event.key === "ArrowRight") {
+            siguiente();
+        }
+
+
+        if (event.key === "ArrowLeft") {
+            anterior();
+        }
+
+    }
+);
 
 
 /* =========================
@@ -161,7 +222,8 @@ play.addEventListener(
             audio.play()
                 .then(function() {
 
-                    play.textContent = "❚❚";
+                    play.textContent =
+                        "❚❚";
 
                     reproduciendo = true;
 
@@ -169,7 +231,7 @@ play.addEventListener(
                 .catch(function() {
 
                     alert(
-                        "Revisa que cancion.mp3 esté dentro de la carpeta musica."
+                        "No se pudo reproducir la música. Revisa que cancion.mp3 esté dentro de la carpeta musica."
                     );
 
                 });
@@ -180,7 +242,9 @@ play.addEventListener(
 );
 
 
-/* CUANDO TERMINA LA CANCIÓN */
+/* =========================
+   CUANDO TERMINA LA CANCIÓN
+========================= */
 
 audio.addEventListener(
     "ended",
@@ -194,33 +258,11 @@ audio.addEventListener(
 );
 
 
-/* TECLADO */
+/* =========================
+   MENSAJE DE COMPROBACIÓN
+========================= */
 
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        const visor =
-            document.getElementById("visor");
-
-        if (
-            !visor.classList.contains("activo")
-        ) {
-            return;
-        }
-
-        if (event.key === "Escape") {
-            cerrarFoto();
-        }
-
-        if (event.key === "ArrowRight") {
-            siguiente();
-        }
-
-        if (event.key === "ArrowLeft") {
-            anterior();
-        }
-
-    }
+console.log(
+    "💗 Melu y Wili cargado correctamente 💗"
 );
 ```
