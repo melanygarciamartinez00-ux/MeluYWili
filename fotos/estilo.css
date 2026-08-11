@@ -1,0 +1,983 @@
+/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: white;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background: #050014;
+
+    position: relative;
+}
+
+
+/* =====================================
+   GALAXIA
+===================================== */
+
+.galaxia {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -5;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            #5a1680 0%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 25%,
+            #8a1d70 0%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 80%,
+            #211568 0%,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            #391478 0%,
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #03000d,
+            #100027,
+            #050014
+        );
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   ESTRELLAS
+===================================== */
+
+.estrellas {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -4;
+
+    pointer-events: none;
+
+    background-image:
+
+        radial-gradient(
+            2px 2px at 10% 20%,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 20% 80%,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 30% 40%,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 40% 10%,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 50% 70%,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 60% 30%,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 70% 90%,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 80% 15%,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 90% 55%,
+            white,
+            transparent
+        );
+
+    animation:
+        parpadear 4s infinite alternate;
+}
+
+@keyframes parpadear {
+
+    from {
+        opacity: .35;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================
+   CORAZONES
+===================================== */
+
+#corazones {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+.corazon-flotante {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    animation:
+        subir 7s linear forwards;
+
+    opacity: .75;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(255, 100, 180, .8)
+        );
+}
+
+@keyframes subir {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(.5)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            scale(1.3)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================
+   PORTADA
+===================================== */
+
+.portada {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+
+.contenido-portada {
+
+    max-width: 800px;
+
+    padding: 55px 35px;
+
+    border-radius: 35px;
+
+    background:
+        rgba(255, 255, 255, .07);
+
+    border:
+        1px solid rgba(255, 255, 255, .15);
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+
+        0 0 50px
+        rgba(255, 60, 170, .15),
+
+        inset 0 0 30px
+        rgba(255, 255, 255, .03);
+}
+
+
+.pequeno {
+
+    color: #ffb6e6;
+
+    letter-spacing: 4px;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+.portada h1 {
+
+    font-size:
+        clamp(55px, 10vw, 110px);
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 25px
+        rgba(255, 70, 180, .5);
+}
+
+
+.portada h1 span:first-child {
+    color: #ff78c8;
+}
+
+.portada h1 span:last-child {
+    color: #a987ff;
+}
+
+
+.portada h1 b {
+
+    color: #ff3c92;
+
+    display: inline-block;
+
+    animation:
+        latido 1.2s infinite;
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+
+.subtitulo {
+
+    color: #e8dcf7;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+/* =====================================
+   BOTÓN PRINCIPAL
+===================================== */
+
+.boton-comenzar {
+
+    margin-top: 35px;
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4fa3,
+            #9b72ff
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 80, 180, .35);
+
+    transition: .3s;
+}
+
+
+.boton-comenzar:hover {
+
+    transform:
+        scale(1.06);
+
+    box-shadow:
+        0 0 35px
+        rgba(255, 80, 180, .6);
+}
+
+
+/* =====================================
+   HISTORIA
+===================================== */
+
+.historia {
+
+    position: relative;
+
+    z-index: 5;
+
+    padding: 100px 20px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.tarjeta {
+
+    max-width: 700px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, .07);
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+
+    border-radius: 30px;
+
+    padding: 45px;
+
+    backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, .25);
+}
+
+
+.corazon-grande {
+
+    font-size: 60px;
+
+    animation:
+        latido 1.5s infinite;
+
+    margin-bottom: 20px;
+}
+
+
+.tarjeta h2 {
+
+    color: #ff8dcc;
+
+    margin-bottom: 20px;
+
+    font-size: 32px;
+}
+
+
+.tarjeta p {
+
+    color: #e6dff0;
+
+    line-height: 1.8;
+
+    margin: 12px 0;
+}
+
+
+/* =====================================
+   GALERÍA
+===================================== */
+
+.galeria {
+
+    position: relative;
+
+    z-index: 5;
+
+    padding:
+        120px 20px;
+
+    text-align: center;
+
+    background:
+        rgba(5, 0, 24, .28);
+
+    backdrop-filter:
+        blur(3px);
+}
+
+
+/*
+   ESTE CONTENEDOR ASEGURA QUE
+   LAS FOTOS NO SE MEZCLEN CON
+   LAS PALABRAS
+*/
+
+.galeria-contenido {
+
+    position: relative;
+
+    z-index: 6;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.titulo-pequeno {
+
+    color: #b99cff;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+
+.galeria h2 {
+
+    font-size:
+        clamp(38px, 7vw, 65px);
+
+    color: #ff7bc8;
+
+    text-shadow:
+        0 0 15px
+        rgba(255, 80, 180, .4);
+
+    margin-bottom: 15px;
+}
+
+
+.galeria h2 span {
+
+    color: white;
+}
+
+
+.descripcion {
+
+    color: #d6cce5;
+
+    margin:
+        0 auto 50px;
+
+    font-size: 16px;
+}
+
+
+/* =====================================
+   FOTOS
+===================================== */
+
+.fotos {
+
+    width: 100%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+    position: relative;
+
+    z-index: 7;
+}
+
+
+.foto {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, .15);
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, .45);
+
+    transition:
+        transform .4s,
+        box-shadow .4s;
+}
+
+
+.foto img {
+
+    width: 100%;
+
+    height: 430px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .5s;
+}
+
+
+.foto:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(255, 70, 180, .3);
+}
+
+
+.foto:hover img {
+
+    transform:
+        scale(1.05);
+}
+
+
+.numero {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 15px;
+
+    background:
+        rgba(0, 0, 0, .55);
+
+    backdrop-filter:
+        blur(5px);
+
+    padding:
+        8px 13px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    z-index: 8;
+}
+
+
+/* =====================================
+   FRASE
+===================================== */
+
+.frase {
+
+    position: relative;
+
+    z-index: 5;
+
+    padding:
+        110px 25px;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.linea {
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 120, 200, .7),
+            transparent
+        );
+}
+
+
+.frase-contenido {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    padding: 40px 0;
+}
+
+
+.frase-contenido span {
+
+    color: #ff70c2;
+
+    font-size: 55px;
+}
+
+
+.frase-contenido p {
+
+    color: #e9dff4;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+}
+
+
+/* =====================================
+   MÚSICA
+===================================== */
+
+.musica {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    padding:
+        80px 20px;
+}
+
+
+.disco {
+
+    width: 100px;
+
+    height: 100px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff55a8,
+            #7257ff
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(255, 80, 180, .4);
+
+    animation:
+        girar 5s linear infinite;
+}
+
+
+@keyframes girar {
+
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.musica h2 {
+
+    margin-top: 25px;
+
+    color: #ff8dcc;
+
+    font-size: 32px;
+}
+
+
+.musica p {
+
+    margin:
+        12px 0 25px;
+
+    color: #d8cee6;
+}
+
+
+audio {
+
+    width:
+        min(500px, 90%);
+}
+
+
+.boton-musica {
+
+    display: block;
+
+    margin: 20px auto;
+
+    padding: 12px 25px;
+
+    border:
+        1px solid #ff78c8;
+
+    background:
+        transparent;
+
+    color: white;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.boton-musica:hover {
+
+    background:
+        #ff5cac;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    padding:
+        70px 20px 40px;
+
+    background:
+        rgba(0, 0, 0, .25);
+}
+
+
+.corazones-finales {
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+footer h2 {
+
+    color: #ff7ac8;
+
+    font-size: 35px;
+}
+
+
+footer h2 span {
+
+    color: white;
+}
+
+
+footer p {
+
+    margin-top: 10px;
+
+    color: #cfc3dd;
+}
+
+
+footer .fecha {
+
+    font-size: 12px;
+
+    opacity: .6;
+}
+
+
+/* =====================================
+   CELULAR
+===================================== */
+
+@media (max-width: 700px) {
+
+    .contenido-portada {
+
+        padding:
+            40px 20px;
+    }
+
+
+    .portada h1 {
+
+        font-size: 55px;
+    }
+
+
+    .subtitulo {
+
+        font-size: 15px;
+    }
+
+
+    .galeria {
+
+        padding:
+            90px 15px;
+    }
+
+
+    .fotos {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    .foto img {
+
+        height: 450px;
+    }
+
+
+    .tarjeta {
+
+        padding:
+            30px 20px;
+    }
+
+
+    .frase-contenido {
+
+        gap: 8px;
+    }
+
+
+    .frase-contenido p {
+
+        font-size: 17px;
+    }
+
+
+    .frase-contenido span {
+
+        font-size: 35px;
+    }
+}
