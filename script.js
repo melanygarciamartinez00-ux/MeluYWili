@@ -12,10 +12,8 @@ function irGaleria() {
     const musica = document.getElementById("musica");
 
     musica.play();
-
-    document.getElementById("galeria").scrollIntoView({
-        behavior: "smooth"
-    });
+ document.getElementById("contador").textContent =
+    (fotoActual + 1) + " / " + fotos.length;   });
 
 }
     
@@ -61,8 +59,9 @@ function mostrarFoto() {
 
     imagen.src = fotos[fotoActual];
 
-  document.getElementById("contador").textContent =
-    (fotoActual + 1) + " / " + fotos.length; 
+    document.getElementById("contador")
+        .textContent =
+        `${fotoActual + 1} / ${fotos.length}`;
 }
 
 
