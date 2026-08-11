@@ -100,33 +100,22 @@ ang="es">
              GALERÍA
         ================================== -->
 
-        <section
-            id="galeria"
-            class="seccion">
+        function irGaleria() {
 
-            <p class="etiqueta">
-                ✦ NUESTROS RECUERDOS ✦
-            </p>
+    const musica = document.getElementById("musica");
 
+    musica.play()
+        .then(() => {
+            console.log("🎵 Música reproduciéndose");
+        })
+        .catch((error) => {
+            console.log("No se pudo iniciar la música:", error);
+        });
 
-            <h2>
-                💗 Melu & Wili 💗
-            </h2>
-
-
-            <p class="descripcion">
-
-                Toca una fotografía
-                para verla más grande ✨
-
-            </p>
-
-
-
-            <div class="galeria">
-
-
-                <!-- FOTO 1 -->
+    document.getElementById("galeria").scrollIntoView({
+        behavior: "smooth"
+    });
+}               <!-- FOTO 1 -->
 
                 <div
                     class="foto"
